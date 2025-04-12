@@ -1,0 +1,649 @@
+:root {
+    --base-font-size: calc(0.5rem + 3.5vw);
+}
+
+body {
+    width: 100vw;
+    margin-top: 6vw;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    color: #000000;
+    background-color: #ffffff;
+    font-size: var(--base-font-size);
+    overflow-x: hidden;
+}
+
+.heading-1 {
+    font-size: 100%;
+    font-weight: bold;
+}
+
+.heading-3 {
+    font-size: 28%;
+    color: #333333;
+}
+
+.heading-4 {
+    font-size: 28%;
+    font-weight: bold;
+}
+
+.paragraph {
+    font-size: 25%;
+    color: #555;
+}
+
+
+/* --- Стили для шапки сайта --- */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6vw;
+    background: rgb(143, 210, 129);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+    transition: background 0.3s;
+    z-index: 1;
+}
+
+.nav_container {
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60%;
+}
+
+.nav__logo img {
+    margin-top: 60%;
+    margin-left: 20%;
+    height: 5vw;
+    border-radius: 1vw;
+    object-fit: contain;
+}
+
+.nav__menu {
+    display: flex;
+    margin-right: 10%;
+}
+
+.nav__list {
+    display: flex;
+    gap: 4vw;
+    margin: 0;
+    list-style: none;
+}
+
+.nav__item {
+    position: relative;
+}
+
+.nav__item:last-child {
+    margin-right: 0; 
+}
+
+.nav__link {
+    font-size: 1.5vw;
+    font-weight: 600;
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s;
+}
+
+.nav__link:hover {
+    color: #ffffff;
+}
+
+/* Стили для бургера */
+.burger {
+    display: none;
+    cursor: pointer;
+    width: 25px;
+    height: 26px;
+    position: relative;
+    z-index: 20;
+}
+
+.burger span {
+    display: block;
+    width: 100%;
+    height: 4px;
+    background: #333;
+    margin: 6px 0;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Анимация бургера при открытии */
+.burger.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+.burger.active span:nth-child(2) {
+    opacity: 0;
+}
+.burger.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Стили для меню на мобильных устройствах */
+@media (max-width: 768px) {
+    .header {
+        height: 8vw;
+    }
+    .burger {
+        display: block; 
+    }
+
+    .header .nav__logo {
+        width: 8vw;
+        
+    }
+
+    .nav__menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        padding: 0 0;
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .nav__menu.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .nav__list {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav__link {
+        font-size: 18px;
+    }
+}
+
+/*Сделаем города зелеными вместе*/
+.lets-make-cities-green-together {
+    width: 100%;
+    padding: 10px; 
+    font-size: var(--base-font-size);
+}   
+
+.city-data-header {
+    display: flex;
+    font-size: 100%;
+}
+
+.header-2 {
+    float: left;
+    margin: 5% 10% 0 7%;
+    font-size: 100%;
+}
+
+.icon-leaves {
+    width: 20%;
+    height: 20%;
+}
+
+.city data .container {
+    justify-content: space-between;
+}
+
+.container .paragraph {
+    float: left;
+    font-size: 30%;
+    margin: 0 10% 0 7%;
+}
+
+.header-3 {
+    margin: 5% 0 0 7%; 
+    font-size: 70%;
+}
+
+.city-data .features {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap; 
+    margin: 3% 0 0 0; 
+}
+
+.city-data .features .feature {
+    text-align: left;
+    margin-left: 7%;
+}
+
+.city-data .features .feature img {
+    width: 30%;
+}
+
+.city-data .features .feature .heading-3 {
+    font-size: 35%;
+}
+
+.city-data .features .feature .paragraph {
+    font-size: 25%;
+}
+
+@media (max-width: 768px) {
+    .lets-make-cities-green-together {
+        padding: 1vw 1vw;
+        text-align: center;
+    }
+
+    .city-data-header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 4vw;
+        flex-wrap: wrap;
+    }
+
+    .city-data-header .header-2 {
+        font-size: 6vw;
+        margin: 0 0 0 5vw;
+        text-align: center;
+        flex: 8% 10% 60%;
+    }
+
+    .icon-leaves {
+        width: 10vw;
+        height: auto;
+        flex: 1 1 10%;
+        transform: translateX(80%);
+    }
+
+    .container {
+        margin-top: 6vw;
+        width: 100%;
+        text-align: left; 
+    }
+
+    .container .paragraph {
+        font-size: 3.5vw;
+        line-height: 1.4;
+        margin-bottom: 3vw;
+        padding: 0 0; 
+    }
+
+    .city-data .header-3 {
+        font-size: 5vw;
+        margin-top: 8vw;
+        text-align: center;
+    }
+
+    .city-data .features {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3vw;
+        margin-top: 5vw;
+        justify-content: center;
+    }
+
+    .city-data .feature {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 1vw 1vw;
+        border-radius: 12px;
+        background: #f8f8f8;
+        box-shadow: 10px 10px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .city-data .feature img {
+        width: 10vw;
+        height: auto;
+        margin-bottom: 3vw;
+    }
+
+    .city-data .feature .heading-3 {
+        font-size: 7vw;
+        font-weight: bold;
+    }
+
+    .city-data .feature .paragraph {
+        font-size: 4vw;
+        line-height: 1.4;
+        width: 100%;
+        text-align: left; 
+    }
+
+    /* Если экран совсем маленький (< 480px), делаем в один столбик */
+    @media (max-width: 480px) {
+        .features {
+            grid-template-columns: 1fr;
+        }
+    }
+}
+
+
+/* Блок с "Хочу помочь!" */
+.help {
+    background-color: #3fac3b25; 
+    width: 80vw;
+    border-radius: 20px;
+    padding: 2% 3% 3% 3%;
+    display: flex;
+    margin: 2% auto;
+    gap: 4%;
+    align-items: center;
+    font-size: var(--base-font-size);
+}
+
+.want-to-help {
+    display: flex;
+    width: 60%;
+    flex-direction: column;
+    font-size: 100%;
+}
+
+.image-park {
+    width: 30vw;
+    height: 25vw;
+    border-radius: 20px;
+}
+
+.help .heading-2 {
+    font-size: 90%;
+    font-weight: bold;
+    color: #000;
+    margin-bottom: 3%;
+}
+
+.help .heading-3 {
+    font-size: 40%;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 0;
+}
+
+.help .heading-4 {
+    font-size: 40%;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 0;
+}
+
+.help .heading-5 {
+    font-size: 40%;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 0;
+}
+
+.help .info .paragraph {
+    font-size: 30%;
+    color: #555;
+    margin-bottom: 0;
+}
+
+.help .email-form {
+    display: flex;
+    width: 80%;
+    align-items: center;
+    margin-top: 4%;
+    position: relative;
+}
+
+.help .email-input {
+    width: 45%;
+    padding: 2.5% 50% 3.5% 7%;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    font-size: 30%;
+    outline: none;
+}
+
+.help .email-icon {
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    width: 5%;
+}
+
+.help .submit-button {
+    margin-top: 17px;
+    background-color: #2563eb; 
+    color: white; 
+    border: none;
+    padding: 14px 16px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: background 0.3s;
+    white-space: nowrap;
+    width: auto;
+    min-width: 140px;
+    display: flex; /* Делаем кнопку flex-контейнером */
+    justify-content: center; /* Центрируем текст по горизонтали */
+    align-items: center; /* Центрируем текст по вертикали */
+    text-align: center;
+}
+
+.submit-button:hover {
+    background-color: #1d4ed8;
+}
+
+@media (max-width: 768px) {
+    .help {
+        width: 100vw;
+        flex-direction: column;
+        padding: 5% 4%;
+        gap: 5%;
+        justify-content: center;
+        margin: 10vw auto;
+    }
+
+    .want-to-help {
+        width: 100%;
+        align-items: center;
+    }
+
+    .image-park {
+        width: 70vw;
+        height: 50vw;
+        margin-top: 5%;
+    }
+
+    .help .heading-2 {
+        font-size: 6vw;
+        text-align: center;
+        margin-bottom: 5%;
+    }
+
+    .help .heading-3 {
+        font-size: 4vw;
+        text-align: center;
+    }
+
+    .help .heading-4, .help .heading-5 {
+        font-size: 3.5vw;
+        text-align: center;
+        margin-top: 2%;
+    }
+
+    .help .info .paragraph {
+        font-size: 4vw;
+        line-height: 1.4;
+        text-align: center;
+        margin-bottom: 3%;
+    }
+
+    .help .email-form {
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .help .email-input {
+        width: 90%;
+        font-size: 4vw;
+        padding: 4% 5%;
+    }
+
+    .help .email-icon {
+        width: 8%;
+        right: 30%;
+        margin: -25px -90px -70px 0;
+    }
+
+    .help .submit-button {
+        width: 60%;
+        font-size: 4.5vw;
+        padding: 3% 0;
+        margin-left: 15vw;
+    }
+}
+
+/* Подвал сайта */
+footer {
+    background: #ffffff;
+    padding: 3vw 2% 0% ;
+    color: #333;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-nav, .footer-social {
+    min-width: 10px;
+    bottom: 0%;
+    right: 5%;
+}
+
+.footer-nav h3, .footer-social h3 {
+    font-size: 1rem;
+    margin-bottom: 1%;
+}
+
+.footer-menu {
+    font-size: 20%;
+    list-style: none;
+    padding: 0;
+}
+
+.footer-menu li {
+    margin-bottom: 5px;
+}
+
+.footer-menu a {
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s;
+}
+
+.footer-menu a:hover {
+    color: #2055E5;
+}
+
+.social-icons a {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.footer-text {
+    text-align: center;
+    width: 100%;
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #777;
+}
+
+/* Ошибка теперь над полем */
+.form .error {
+    color: red;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+/* Подсветка ошибок */
+.form .input-error {
+    border: 2px solid red !important;
+    background-color: #ffe6e6 !important;
+    color: black !important;
+}
+
+/* === Стили для формы с почтой === */
+.email-form {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Поле ввода email */
+.email-input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    width: 100%;
+}
+
+/* Ошибка теперь аккуратно под полем */
+.email-form .error {
+    color: red;
+    font-size: 14px;
+    position: absolute;
+    bottom: -20px; /* Ошибка отображается под полем */
+    left: 0;
+}
+
+
+
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        transform: translateY(-15%);
+    }
+
+    .footer-nav, .footer-social {
+        min-width: 100%;
+        text-align: center;
+    }
+
+    .footer-nav h3, .footer-social h3 {
+        margin-bottom: 1rem;
+        font-size: 1.2rem;
+    }
+
+    .footer-menu {
+        font-size: 1rem;
+        margin-top: 1rem;
+        margin-bottom: 0;
+    }
+
+    .footer-menu li {
+        margin-bottom: 10px;
+    }
+
+    .social-icons {
+        margin-top: 10px;
+    }
+
+    .footer-text {
+        margin-top: 15px;
+        font-size: 0.8rem;
+    }
+}
+

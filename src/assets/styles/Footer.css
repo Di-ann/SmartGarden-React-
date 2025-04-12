@@ -1,0 +1,173 @@
+:root {
+    --base-font-size: calc(0.5rem + 3.5vw);
+}
+
+body {
+    width: 100vw;
+    margin-top: 6vw;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    color: #000000;
+    background-color: #ffffff;
+    font-size: var(--base-font-size);
+    overflow-x: hidden;
+}
+
+.heading-1 {
+    font-size: 100%;
+    font-weight: bold;
+}
+
+.heading-3 {
+    font-size: 28%;
+    color: #333333;
+}
+
+.heading-4 {
+    font-size: 28%;
+    font-weight: bold;
+}
+
+.paragraph {
+    font-size: 25%;
+    color: #555;
+}
+
+/* Подвал сайта */
+footer {
+    background: #ffffff;
+    padding: 5vw 5% 0%;
+    color: #333;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-nav, .footer-social {
+    min-width: 10px;
+    bottom: 0%;
+    right: 5%;
+}
+
+.footer-nav h3, .footer-social h3 {
+    font-size: 1rem;
+    margin-bottom: 1%;
+}
+
+.footer-menu {
+    font-size: 20%;
+    list-style: none;
+    padding: 0;
+}
+
+.footer-menu li {
+    margin-bottom: 5px;
+}
+
+.footer-menu a {
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s;
+}
+
+.footer-menu a:hover {
+    color: #2055E5;
+}
+
+.social-icons a {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.footer-text {
+    text-align: center;
+    width: 100%;
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #777;
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        transform: translateY(-15%);
+    }
+
+    .footer-nav, .footer-social {
+        min-width: 100%;
+        text-align: center;
+    }
+
+    .footer-nav h3, .footer-social h3 {
+        margin-bottom: 1rem;
+        font-size: 1.2rem;
+    }
+
+    .footer-menu {
+        font-size: 1rem;
+        margin-top: 1rem;
+        margin-bottom: 0;
+    }
+
+    .footer-menu li {
+        margin-bottom: 10px;
+    }
+
+    .social-icons {
+        margin-top: 10px;
+    }
+
+    .footer-text {
+        margin-top: 15px;
+        font-size: 0.8rem;
+    }
+}
+
+
+
+/* Ошибка теперь над полем */
+.form .error {
+    color: red;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+/* Подсветка ошибок */
+.form .input-error {
+    border: 2px solid red !important;
+    background-color: #ffe6e6 !important;
+    color: black !important;
+}
+
+/* === Стили для формы с почтой === */
+.email-form {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Поле ввода email */
+.email-input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    width: 100%;
+}
+
+/* Ошибка теперь аккуратно под полем */
+.email-form .error {
+    color: red;
+    font-size: 14px;
+    position: absolute;
+    bottom: -20px; /* Ошибка отображается под полем */
+    left: 0;
+}
