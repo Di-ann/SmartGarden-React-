@@ -7,7 +7,7 @@ export const validateFields = (formData) => {
     const specialCharPattern = /[&$#_<>/%^*!@+=]/;
   
     if (!nameRegex.test(formData.name.trim())) {
-      errors.name = "Введите корректное имя (только буквы)";
+      errors.name = "Введите корректное имя (только слово)";
     }
   
     if (!phoneRegex.test(formData.phone.trim())) {
@@ -23,7 +23,7 @@ export const validateFields = (formData) => {
     }
   
     if (formData.interest === 'home') {
-        if (!formData.homeArea) errors.homeArea = 'Введите площадь дома';
+        if (!formData.homeArea) errors.homeArea = 'Введите площадь дома (м²)(только цифры!)';
         if (!formData.homePlants.trim()) {
           errors.homePlants = 'Введите растения';
         } else if (specialCharPattern.test(formData.homePlants)) {
@@ -41,7 +41,7 @@ export const validateFields = (formData) => {
     }
     
     if (formData.interest === 'garden') {
-    if (!formData.gardenSize) errors.gardenSize = 'Введите размер сада';
+    if (!formData.gardenSize) errors.gardenSize = 'Введите размер сада (м²)(только цифры!)';
     if (!formData.gardenStyle.trim()) {
         errors.gardenStyle = 'Уточните стиль сада';
     } else if (specialCharPattern.test(formData.gardenStyle)) {
